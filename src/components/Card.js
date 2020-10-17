@@ -1,4 +1,5 @@
 import React from 'react';
+import Names from './Names';
 
 class Card extends React.Component {
     render() {
@@ -9,8 +10,9 @@ class Card extends React.Component {
                    <p className = "title-text">{cards.Title}</p>
                 </div>
                 <div className = "name-cards">
-                    <input type = "checkbox"></input>
-                   {cards.content[0]}
+                    {cards.content.map(element => (
+                        <Names names = {element} />
+                    ))}
                 </div>
                
             </div>
